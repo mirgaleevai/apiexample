@@ -36,20 +36,20 @@ public class BaseSpecs {
             .expectBody(matchesJsonSchemaInClasspath("schemas/list-users-schema.json"))
             .build();
 
-    public static ResponseSpecification CreateUserSpec = new ResponseSpecBuilder()
+    public static ResponseSpecification createUserSpec = new ResponseSpecBuilder()
             .log(ALL)
             .expectStatusCode(201)
             .expectBody("name", notNullValue())
             .expectBody("job", notNullValue())
             .build();
 
-    public static ResponseSpecification UpdateUserSpec = new ResponseSpecBuilder()
+    public static ResponseSpecification updateUserSpec = new ResponseSpecBuilder()
             .log(ALL)
             .expectStatusCode(200)
             .expectBody("job", notNullValue())
             .build();
 
-    public static ResponseSpecification DeleteUserSpec = new ResponseSpecBuilder()
+    public static ResponseSpecification deleteUserSpec = new ResponseSpecBuilder()
             .log(ALL)
             .expectStatusCode(204)
             .build();

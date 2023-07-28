@@ -72,7 +72,7 @@ public class TestExamples {
                         .body(createUser)
                         .post("/users")
                         .then()
-                        .spec(CreateUserSpec));
+                        .spec(createUserSpec));
 
         step("Check response", () -> {
             assertEquals("leader", createUser.getJob());
@@ -90,7 +90,7 @@ public class TestExamples {
                         .body(createUser)
                         .patch("/users/2")
                         .then()
-                        .spec(UpdateUserSpec));
+                        .spec(updateUserSpec));
 
         step("Check response", () -> assertEquals("zion resident", createUser.getJob()));
     }
@@ -101,7 +101,7 @@ public class TestExamples {
                 given(requestSpec)
                         .delete("/users/2")
                         .then()
-                        .spec(DeleteUserSpec));
+                        .spec(deleteUserSpec));
     }
 
 }
